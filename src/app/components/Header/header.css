@@ -1,0 +1,43 @@
+.navbar {
+    position: fixed;
+    height: 70px;
+    width: 100%;
+    padding-left: 23px;
+    padding-right: 23px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display: flex;
+    background-color: #CFD9DB;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: solid 1px #9BA6BC;
+}
+.itens-esquerda {
+    display: flex;
+    align-items: center;
+}
+.links-paginas {
+    margin-left: 30px;
+}
+.link-pagina {
+    margin-right: 18px;
+    color: #032D60;
+    font-weight: 600;
+}
+.acessibilidade {
+    margin-left: 80px;
+    display: flex;
+    align-items: center;
+}
+.acessibilidade > p {
+    margin-left: 4px;
+    color: #032D60;
+    font-weight: 600;
+}
+.itens-direita {
+    display: flex;
+    align-items: center;
+}
+.icone-login {
+    margin-left: 34px;
+}

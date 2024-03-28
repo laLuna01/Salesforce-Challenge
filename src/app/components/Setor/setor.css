@@ -1,0 +1,12 @@
+.setor {
+    align-items: center;
+    text-align: center;
+}
+.imagem-setor {
+    margin: auto;
+}
+.nome-setor {
+    font-size: 18px;
+    font-weight: 700;
+    color: #20083F;
+}

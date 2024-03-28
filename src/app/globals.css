@@ -2,3 +2,62 @@
 @tailwind components;
 @tailwind utilities;
 
+main {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+section {
+    padding-top: 40px;
+    padding-left: 60px;
+    padding-right: 60px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: auto;
+    gap: 5%;
+}
+.section-content {
+    margin: auto;
+    max-width: 50%;
+}
+.section-img {
+    width: 45%;
+}
+.section-img :first-child{
+    margin: auto;
+}
+.titulo {
+    font-size: 48px;
+    font-weight: 700;
+    color: #032D60;
+    text-align: center;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+.t-destaque {
+    font-size: 38px;
+    color: #1B8FC0;
+    border-bottom: solid 3px #2581B5;
+}
+.p-destaque {
+    text-align: center;
+    font-size: 24px;
+    font-weight: 600;
+    color: #0D4180;
+    margin-bottom: 30px;
+}
+p {
+    font-size: 18px;
+}
+.section-button {
+    margin-top: 35px;
+    width: 100%;
+    text-align: center;
+}
+.icones-setores {
+    display: grid;
+    grid-template-columns: 120px 120px 120px 120px;
+    gap: 15px;
+}

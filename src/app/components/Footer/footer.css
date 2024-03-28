@@ -1,10 +1,9 @@
 footer {
+    margin-top: 40px;
     display: flex;
     flex-wrap: wrap;
     width: 100%;
     background-color: #CFD9DB;
-    position: fixed;
-    bottom: 0;
     border-top: solid 1px #9BA6BC;
     padding: 35px;
     gap: 50px;

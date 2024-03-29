@@ -1,0 +1,25 @@
+.o-que-e {
+    margin-bottom: 50px;
+}
+.funcionalidades {
+    display: flex;
+    justify-content: center;
+}
+#destaque {
+    margin-bottom: 0;
+    margin-top: 30px;
+}
+.beneficios {
+    margin-top: 50px;
+}
+.lista-beneficios {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+.lista-beneficios > li {
+    list-style: circle;
+    margin-bottom: 12px;
+}
+li::marker {
+    color: blue;
+}

@@ -9,9 +9,10 @@ main {
     gap: 50px;
 }
 section {
-    padding-top: 40px;
+    padding-top: 30px;
     padding-left: 60px;
     padding-right: 60px;
+    padding-bottom: 30px;
     display: flex;
     align-items: center;
     flex-wrap: wrap;

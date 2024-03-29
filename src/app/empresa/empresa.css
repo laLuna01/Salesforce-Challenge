@@ -1,0 +1,15 @@
+.lista-impacto, .lista-valores {
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+.lista-impacto > li, .lista-valores > li {
+    list-style: circle;
+    margin-bottom: 12px;
+}
+li::marker {
+    color: blue;
+}
+.lista-impacto > li > strong, .lista-valores > li > strong {
+    font-size: 18px;
+    color: rgb(10, 10, 136);
+}

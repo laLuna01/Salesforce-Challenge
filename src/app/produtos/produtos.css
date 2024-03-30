@@ -1,0 +1,29 @@
+#quais-sao {
+    margin-bottom: 30px;
+}
+#clique-produtos {
+    margin-bottom: 0;
+    margin-top: 40px;
+    font-size: 20px;
+}
+.produtos {
+    display: flex;
+    justify-content: center;
+    padding-top: 0;
+}
+.recursos {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+.lista-recursos {
+    margin-bottom: 40px;
+}
+.lista-recursos > li {
+    color: rgb(0, 0, 71);
+    font-weight: 600;
+    list-style: circle;
+    margin-bottom: 12px;
+}
+li::marker {
+    color: blue;
+}

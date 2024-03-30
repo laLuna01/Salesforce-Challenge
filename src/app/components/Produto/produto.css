@@ -1,0 +1,11 @@
+.produto {
+    width: 120px;
+    height: 135px;
+}
+.imagem-produto {
+    margin: auto;
+}
+.nome-produto {
+    margin-top: 5px;
+    font-weight: 600;
+}

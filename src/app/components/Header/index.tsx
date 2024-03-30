@@ -10,11 +10,11 @@ const Header = () => {
                         <Image className="logo-header" src="/logo.png" alt="logo salesforce" width={80} height={40}/>
                     </a>
                     <nav className="links-paginas">
-                        <a className="link-pagina" href="">CRM</a>
+                        <a className="link-pagina" href="./crm">CRM</a>
                         <a className="link-pagina" href="">SuperPlataforma</a>
-                        <a className="link-pagina" href="">Produtos</a>
+                        <a className="link-pagina" href="./produtos">Produtos</a>
                         <a className="link-pagina" href="">Suporte</a>
-                        <a className="link-pagina" href="">Empresa</a>
+                        <a className="link-pagina" href="./empresa">Empresa</a>
                     </nav>
                 </div>
                 <button className="acessibilidade">

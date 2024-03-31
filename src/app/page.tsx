@@ -24,7 +24,7 @@ export default function Home() {
             <Image src="/mascote-home1.png" alt="mascote da salesforce segurando a mão de duas pessoas" width={470} height={410} />
           </div>
           <div className="section-content">
-            <h2 className="titulo">A Salesforce é para <br /><span className="t-destaque">Todos</span></h2>
+            <h2 className="titulo">A Salesforce é para <br /><span className="t-destaque">todo mundo</span></h2>
             <div className="icones-setores">
               <Setor imagem="/i-manufatura.svg" nome="Manufatura" />
               <Setor imagem="/i-financeiro.svg" nome="Financeiro" />

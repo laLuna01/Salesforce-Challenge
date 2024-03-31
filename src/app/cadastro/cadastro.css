@@ -25,14 +25,36 @@
     font-weight: 600;
     color: rgb(8, 8, 104);
 }
-.input-login {
+.input-cadastro {
     width: 70%;
     border: 1px solid #a3a3a3;
     border-radius: 10px;
     padding: 10px;
     box-shadow: 2px 2px 5px rgb(168, 168, 168);
 }
-.botao-logar {
+.checkbox {
+    display: flex;
+    gap: 40px;
+}
+.checkbox-item {
+    display: flex;
+    gap: 10px;
+}
+.itens-escondidos {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+.itens-escondidos a {
+    color: rgb(0, 16, 85);
+    font-weight: 500;
+}
+.itens-escondidos a:hover {
+    text-decoration: underline;
+}
+.botao-cadastrar {
     text-align: center;
     width: 250px;
     height: 40px;
@@ -43,22 +65,22 @@
     border-radius: 30px;
     transition: transform .6s;
 }
-.botao-logar:hover {
+.botao-cadastrar:hover {
     transform: scale(1.1);
     background: rgb(2, 103, 170);
 }
-.cadastrar-p {
+.logar-p {
     font-size: 14px;
     text-align: center;
     margin: 15px 0;
 }
-.cadastrar-p {
+.logar-p {
     color: rgb(3, 7, 20)000;
 }
-.cadastrar-p a {
+.logar-p a {
     color: rgb(1, 125, 207);
     font-weight: 500;
 }
-.cadastrar-p a:hover {
+.logar-p a:hover {
     text-decoration: underline;
 }

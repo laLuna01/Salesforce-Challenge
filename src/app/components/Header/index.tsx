@@ -26,7 +26,9 @@ const Header = () => {
                         <Image src="/lupa1.png" alt="pesquisar" width={26} height={26}/>
                     </button>
                     <button className="icone-login">
-                        <Image src="/avatar1.png" alt="login" width={25} height={25}/>
+                        <a href="./login">
+                            <Image src="/avatar1.png" alt="login" width={25} height={25}/>
+                        </a>
                     </button>
                 </div>
             </header>

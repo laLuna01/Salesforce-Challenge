@@ -13,7 +13,7 @@ const Header = () => {
                         <a className="link-pagina" href="./crm">CRM</a>
                         <a className="link-pagina" href="">SuperPlataforma</a>
                         <a className="link-pagina" href="./produtos">Produtos</a>
-                        <a className="link-pagina" href="">Suporte</a>
+                        <a className="link-pagina" href="./suporte">Suporte</a>
                         <a className="link-pagina" href="./empresa">Empresa</a>
                     </nav>
                 </div>

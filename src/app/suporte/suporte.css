@@ -1,0 +1,76 @@
+.contato {
+    margin-top: 40px;
+}
+#opcoes-contato {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.lista-contato {
+    margin-bottom: 20px;
+}
+.lista-contato > li {
+    list-style: circle;
+    margin-bottom: 12px;
+}
+li::marker {
+    color: blue;
+}
+.formulario-contato {
+    width: fit-content;
+    padding: 0;
+    margin-top: 50px;
+    margin-bottom: 60px;
+    display: flex;
+    justify-content: center;
+    border-radius: 20px;
+    gap: 0;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+.form-img {
+    border-bottom-left-radius: 20px;
+    border-top-left-radius: 20px;
+    width: 400px;
+    height: 500px;
+    background-image: url("../../../public/imagem-suporte.jpg");
+    background-size: cover;
+    background-position: center;
+}
+.form-contato {
+    align-content: center;
+    padding: 30px;
+    background-color: rgb(156, 195, 255);
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
+    width: 500px;
+    height: 500px;
+}
+.form-contato > form > h3 {
+    margin-left: 3px;
+    margin-bottom: 5px;
+    font-size: 28px;
+    font-weight: bold;
+    color: rgb(0, 4, 41);
+}
+.contato-input {
+    border-radius: 5px;
+	background-color: #eee;
+	padding: 8px 10px;
+	margin: 8px 0;
+	width: 100%;
+    font-size: 14px;
+}
+.contato-input:focus {
+  outline:1px solid rgb(0, 255, 242);
+}
+.enviar {
+	border-radius: 20px;
+	border: 1px solid #00ccff;
+	background-color: #124074;
+	color: #FFFFFF;
+	font-size: 14px;
+	font-weight: bold;
+	padding: 10px 35px;
+}
+.enviar:hover {
+  background-color: rgb(0, 27, 85);
+}

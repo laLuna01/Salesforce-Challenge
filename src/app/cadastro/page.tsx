@@ -23,7 +23,7 @@ export default function Cadastro() {
                     </div>
                     <div className="itens-escondidos">
                         <input className="input-cadastro" type="text" id="empresa" placeholder="Empresa" required />
-                        <a href="./empresa">Empresa ainda não cadastrada</a>
+                        <a href="./novaempresa">Empresa ainda não cadastrada</a>
                     </div>
                     <button className="botao-cadastrar" type="submit">Cadastrar</button>
                     <p className="logar-p">Já tem uma conta? <a href="./login">Fazer login</a> </p>

@@ -25,12 +25,16 @@
     font-weight: 600;
     color: rgb(8, 8, 104);
 }
-.input-cadastro {
+.input-novaempresa {
     width: 70%;
     border: 1px solid #a3a3a3;
     border-radius: 10px;
     padding: 10px;
     box-shadow: 2px 2px 5px rgb(168, 168, 168);
+}
+.p-checkbox {
+    font-weight: 600;
+    color: rgb(0, 0, 78);
 }
 .checkbox {
     display: flex;
@@ -48,7 +52,7 @@
     gap: 10px;
 }
 .itens-escondidos a {
-    color: rgb(0, 51, 85);
+    color: rgb(0, 16, 85);
     font-weight: 500;
 }
 .itens-escondidos a:hover {
@@ -69,18 +73,18 @@
     transform: scale(1.1);
     background: rgb(2, 103, 170);
 }
-.logar-p {
+.voltar-p {
     font-size: 14px;
     text-align: center;
     margin: 15px 0;
 }
-.logar-p {
+.voltar-p {
     color: rgb(3, 7, 20)000;
 }
-.logar-p a {
+.voltar-p a {
     color: rgb(1, 125, 207);
     font-weight: 500;
 }
-.logar-p a:hover {
+.voltar-p a:hover {
     text-decoration: underline;
 }

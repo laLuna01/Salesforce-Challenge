@@ -1,0 +1,47 @@
+.alunos {
+    width: 100%;
+    display: block;
+}
+.cards-alunos {
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    justify-content: center;
+}
+.projeto {
+    margin-top: 30px;
+    margin-bottom: 40px;
+    display: block;
+}
+.links-projeto {
+    margin-top: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 50px;
+}
+.links-projeto > a {
+    border: 1px solid rgb(189, 189, 189);
+    box-shadow: 10px 5px 5px rgb(168, 168, 168);
+    border-radius: 20px;
+    width: 270px;
+    padding: 20px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 600;
+    color: rgb(8, 8, 180);
+    transition: transform .6s;
+}
+.links-projeto > a:hover {
+    transform: scale(1.1);
+}
+.links-projeto > a :first-child {
+    height: 70px;
+    align-content: center;
+}
+.links-projeto > a > :last-child {
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 0;
+}

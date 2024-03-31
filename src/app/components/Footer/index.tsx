@@ -47,6 +47,11 @@ const Footer = () => {
                         <a href="">Exemplo de link 11</a>
                         <a href="">Exemplo de link 12</a>
                     </div>
+                    <div className="footer-column" id="pagina-alunos">
+	                    <p>
+		                    <a href="./alunos">Alunos e projeto</a>
+	                    </p>
+                    </div>
                 </div>
             </footer>
         </>

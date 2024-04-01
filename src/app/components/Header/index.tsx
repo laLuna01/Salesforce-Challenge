@@ -11,7 +11,7 @@ const Header = () => {
                     </a>
                     <nav className="links-paginas">
                         <a className="link-pagina" href="./crm">CRM</a>
-                        <a className="link-pagina" href="">SuperPlataforma</a>
+                        <a className="link-pagina" href="https://salesforcecustomer360.herokuapp.com/quiz/1/">SuperPlataforma</a>
                         <a className="link-pagina" href="./produtos">Produtos</a>
                         <a className="link-pagina" href="./suporte">Suporte</a>
                         <a className="link-pagina" href="./empresa">Empresa</a>

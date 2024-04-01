@@ -12,7 +12,7 @@ export default function Home() {
             <p className="p-destaque">em um sistema muito mais completo  que uma plataforma - uma <strong>SuperPlataforma</strong></p>
             <p>Com uma <strong>SuperPlataforma</strong> de CRM, você terá as tecnologias corporativas mais inovadoras, utilizando as informações dos clientes para gerenciar contas, leads e oportunidades em um único local.</p>
             <div className="section-button">
-              <Button texto="Monte a sua SuperPlataforma" link="" />
+              <Button texto="Monte a sua SuperPlataforma" link="https://salesforcecustomer360.herokuapp.com/quiz/1/" />
             </div>
           </div>
           <div className="section-img">
@@ -42,7 +42,7 @@ export default function Home() {
             <h2 className="titulo">Experimente o Starter <br /><span className="t-destaque">Gratuitamente</span></h2>
             <p>Experimente o Salesforce <strong>gratuitamente</strong>. Não é necessário cartão de crédito nem instalação de software.</p>
             <div className="section-button">
-              <Button texto="Teste Gratuito" link="" />
+              <Button texto="Teste Gratuito" link="./cadastro" />
             </div>
           </div>
           <div className="section-img">

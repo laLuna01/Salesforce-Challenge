@@ -23,6 +23,7 @@ export default function RootLayout({
         <Header/>
         <script src="./clickCapture.js" defer></script>
         {children}
+        <script src="./chatbot.js" defer></script>
         <Footer/>
       </body>
     </html>

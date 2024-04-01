@@ -12,6 +12,7 @@
     align-items: center;
     justify-content: space-between;
     border-bottom: solid 1px #9BA6BC;
+    z-index: 1;
 }
 .itens-esquerda {
     display: flex;
@@ -27,7 +28,7 @@
     font-weight: 600;
 }
 .acessibilidade {
-    margin-left: 80px;
+    margin-left: 40px;
     display: flex;
     align-items: center;
 }
@@ -41,4 +42,64 @@
     align-items: center;
     gap: 34px;
     margin-left: 35px;
+}
+.menu-hamburger {
+    border: none;
+    background: none;
+    border-top: 4px solid #032D60;
+    cursor: pointer;
+    display: none;
+}
+.menu-hamburger::before, .menu-hamburger::after {
+    content: " ";
+    display: block;
+    width: 30px;
+    height: 4px;
+    background: #032D60;
+    margin-top: 6px;
+}
+#menu-dropdown {
+    display: none;
+}
+
+@media screen and (max-width: 830px) {
+    .menu-hamburger {
+        display: block;
+    }
+    .links-paginas {
+        display: none;
+    }
+    .icone-login {
+        display: none;
+    }
+    #menu-dropdown {
+        width: 250px;
+        height: 370px;
+        flex-direction: column;
+        display: flex;
+        position: fixed;
+        right: 0;
+        top: 70px;
+        background-color: rgb(230, 234, 255);
+        justify-content: space-between;
+        border-bottom-left-radius: 20px;
+        padding: 30px;
+        border-left: 1px solid black;
+        border-bottom: 1px solid black;
+    }
+    .links-paginas-dropdown {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    .links-paginas-dropdown > a {
+        font-size: 18px;
+    }
+    .login-dropdown > a{
+        display: flex;
+        gap: 10px;
+    }
+    .login-dropdown > a > p {
+        font-weight: 600;
+    }
 }

@@ -34,14 +34,14 @@ const Footer = () => {
                         <a href="">Exemplo de link 4</a>
                     </div>
                     <div className="footer-column">
-                        <p>Conheça a Salesforce</p>
+                        <p>Sobre a empresa</p>
                         <a href="">Exemplo de link 5</a>
                         <a href="">Exemplo de link 6</a>
                         <a href="">Exemplo de link 7</a>
                         <a href="">Exemplo de link 8</a>
                     </div>
                     <div className="footer-column">
-                        <p>Conheça a Salesforce</p>
+                        <p>Links populares</p>
                         <a href="">Exemplo de link 9</a>
                         <a href="">Exemplo de link 10</a>
                         <a href="">Exemplo de link 11</a>

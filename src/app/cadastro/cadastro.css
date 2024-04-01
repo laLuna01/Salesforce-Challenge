@@ -84,3 +84,50 @@
 .logar-p a:hover {
     text-decoration: underline;
 }
+
+@media screen and (max-width: 625px) {
+    .form {
+        gap: 15px;
+        padding: 15px;
+    }
+    .t-form {
+        font-size: 30px;
+    }
+    .input-cadastro {
+        width: 80%;
+        font-size: 14px;
+    }
+    .botao-cadastrar {
+        font-size: 15px;
+        width: 130px;
+    }
+    .logar-p {
+        margin-top: 5px;
+        font-size: 11px;
+    }
+    .checkbox {
+        gap: 20px;
+        font-size: 12px;
+    }
+    .checkbox-item {
+        gap: 5px;
+    }
+    .itens-escondidos > a {
+        font-size: 13px;
+    }
+}
+@media screen and (max-width: 440px) {
+    .input-cadastro {
+        font-size: 13px;
+        padding: 8px;
+    }
+    .botao-cadastrar {
+        font-size: 13px;
+    }
+    .itens-escondidos > a {
+        font-size: 10px;
+    }
+    .checkbox {
+        font-size: 9px;
+    }
+}

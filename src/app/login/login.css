@@ -62,3 +62,24 @@
 .cadastrar-p a:hover {
     text-decoration: underline;
 }
+
+@media screen and (max-width: 570px) {
+    .form {
+        padding: 8px;
+        gap: 15px;
+    }
+    .t-form {
+        font-size: 30px;
+    }
+    .input-login {
+        width: 80%;
+        font-size: 14px;
+    }
+    .botao-logar {
+        font-size: 15px;
+        width: 130px;
+    }
+    .cadastrar-p {
+        font-size: 11px;
+    }
+}

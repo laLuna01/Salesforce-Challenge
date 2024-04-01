@@ -88,3 +88,22 @@
 .voltar-p a:hover {
     text-decoration: underline;
 }
+
+@media screen and (max-width: 600px) {
+    .t-form {
+        font-size: 30px;
+    }
+    .input-novaempresa {
+        width: 85%;
+    }
+    .checkbox {
+        font-size: 12px;
+        gap: 10px;
+    }
+    .checkbox-item {
+        gap: 5px;
+    }
+    .botao-cadastrar {
+        width: 200px;
+    }
+}

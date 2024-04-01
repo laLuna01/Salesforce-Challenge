@@ -61,7 +61,9 @@
 #menu-dropdown {
     display: none;
 }
-
+.login-dropdown > a > p {
+    font-size: 18px;
+}
 @media screen and (max-width: 830px) {
     .menu-hamburger {
         display: block;

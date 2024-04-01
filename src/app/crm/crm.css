@@ -3,6 +3,7 @@
 }
 .funcionalidades {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
 }
 #destaque {
@@ -22,4 +23,9 @@
 }
 li::marker {
     color: blue;
+}
+@media screen and (max-width: 1080px) {
+    .funcionalidades {
+        flex-direction: row;
+    }
 }

@@ -27,3 +27,13 @@
 li::marker {
     color: blue;
 }
+
+@media screen and (max-width: 1080px) {
+    .produtos {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .quais-produtos > div :first-child {
+        width: 90%;
+    }
+}

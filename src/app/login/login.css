@@ -63,10 +63,11 @@
     text-decoration: underline;
 }
 
-@media screen and (max-width: 570px) {
+@media screen and (max-width: 745px) {
     .form {
         padding: 8px;
         gap: 15px;
+        width: 90%;
     }
     .t-form {
         font-size: 30px;

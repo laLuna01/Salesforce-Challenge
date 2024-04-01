@@ -8,3 +8,16 @@
 .imagem-funcionalidade {
     margin: auto;
 }
+
+@media screen and (max-width: 678px) {
+    .funcionalidade {
+        width: fit-content;
+    }
+    .imagem-funcionalidade {
+        width: 310px;
+        height: 170px;
+    }
+    .legenda-funcionalidade {
+        font-size: 16px;
+    }
+}

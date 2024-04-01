@@ -89,7 +89,27 @@
     text-decoration: underline;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 745px) {
+    .form {
+        gap: 15px;
+        padding: 15px;
+        width: 90%;
+    }
+    .t-form {
+        font-size: 30px;
+    }
+    .input-novaempresa {
+        width: 80%;
+        font-size: 14px;
+    }
+    .botao-cadastrar {
+        font-size: 15px;
+        width: 130px;
+    }
+    .voltar-p {
+        margin-top: 5px;
+        font-size: 11px;
+    }
     .t-form {
         font-size: 30px;
     }

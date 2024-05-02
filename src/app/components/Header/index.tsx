@@ -10,6 +10,12 @@ const Header = () => {
         setIsMenuOpen(!isMenuOpen);
     };
 
+    const [isMenuOpen1, setIsMenuOpen1] = useState(false);
+
+    const toggleMenu1 = () => {
+        setIsMenuOpen1(!isMenuOpen1);
+    };
+
     return (
         <>
             <header className="navbar">
@@ -25,8 +31,20 @@ const Header = () => {
                         <a className="link-pagina" href="./empresa">Empresa</a>
                     </nav>
                 </div>
-                <button className="acessibilidade">
+                <button className="acessibilidade" onClick={toggleMenu1}>
                     <Image src="/acessibilidade1.png" alt="icone de acessibilidade" width={26} height={26}/>
+                    {isMenuOpen1 && (
+                    <div className="botoes-acessibilidade">
+                        <button className='cores'>
+                            <Image src="/cores.svg" alt="cores" width={26} height={26}/>
+                            Cores
+                        </button>
+                        <button className='texto'>
+                            <Image src="/texto.svg" alt="texto" width={26} height={26}/>
+                            Texto
+                        </button>
+                    </div>
+                    )}
                 </button>
                 <div className="itens-direita">
                     <button className="icone-pesquisar">
@@ -39,7 +57,7 @@ const Header = () => {
                     </button>
                     <button className="menu-hamburger" onClick={toggleMenu}></button>
                     {isMenuOpen && (
-                    <div id="menu-dropdown">
+                    <div className="menu-dropdown">
                         <nav className="links-paginas-dropdown">
                             <a className="link-pagina" href="./crm">CRM</a>
                             <a className="link-pagina" href="https://salesforcecustomer360.herokuapp.com/quiz/1/">SuperPlataforma</a>

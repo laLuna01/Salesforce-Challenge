@@ -22,7 +22,7 @@
     margin-bottom: 12px;
 }
 li::marker {
-    color: blue;
+    color: #0000ff;
 }
 @media screen and (max-width: 1080px) {
     .funcionalidades {

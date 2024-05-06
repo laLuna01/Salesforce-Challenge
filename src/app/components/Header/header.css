@@ -65,7 +65,7 @@
     font-size: 18px;
 }
 .botoes-acessibilidade {
-    background-color: rgb(230, 234, 255);
+    background-color: #e9f1fd;
     position: absolute;
     bottom: -101px;
     height: 100px;
@@ -88,7 +88,7 @@
     border-bottom-right-radius: 20px;
 }
 .botoes-acessibilidade > button:hover {
-    background-color: rgb(185, 194, 199);
+    background-color: #cddef7;
 }
 .cores:hover {
     border-bottom: 1px solid black;
@@ -116,7 +116,7 @@
         position: fixed;
         right: 0;
         top: 70px;
-        background-color: rgb(230, 234, 255);
+        background-color: #e9f1fd;
         justify-content: space-between;
         border-bottom-left-radius: 20px;
         border-left: 1px solid black;
@@ -133,7 +133,7 @@
         padding-left: 30px;
     }
     .links-paginas-dropdown > a:hover {
-        background-color: rgb(185, 194, 199);
+        background-color: #cddef7;
     }
     .login-dropdown > a{
         position: relative;

@@ -7,9 +7,9 @@
     margin-bottom: 12px;
 }
 li::marker {
-    color: blue;
+    color: #0000ff;
 }
 .lista-impacto > li > strong, .lista-valores > li > strong {
     font-size: 18px;
-    color: rgb(10, 10, 136);
+    color: #111169;
 }

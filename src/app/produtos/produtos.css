@@ -19,13 +19,13 @@
     margin-bottom: 40px;
 }
 .lista-recursos > li {
-    color: rgb(0, 0, 71);
+    color: #111169;
     font-weight: 600;
     list-style: circle;
     margin-bottom: 12px;
 }
 li::marker {
-    color: blue;
+    color: #0000ff;
 }
 
 @media screen and (max-width: 1080px) {

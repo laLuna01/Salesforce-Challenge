@@ -2,6 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+    --cor1: #C4E8F0;
+    --cor2: #9BA6BC;
+    --cor3: #032D60;
+    --cor4: #E9F1FD;
+    --cor5: #CDDEF7;
+    --cor6: #1B8FC0;
+    --cor7: #0D4180;
+    --cor8: #0176D3;
+    --cor9: #00C3FF;
+    --cor10: #111169;
+    --cor11: #0869E7;
+    --cor12: #20083F;
+    --cor13: #0000FF;
+    --cor14: #9CC3FF;
+    --cor15: #EEEEEE;
+    --cor16: #000000;
+}
 main {
     margin-top: 20px;
     display: flex;
@@ -32,21 +50,21 @@ section {
 .titulo {
     font-size: 48px;
     font-weight: 700;
-    color: #032D60;
+    color: var(--cor3);
     text-align: center;
     line-height: 1.1;
     margin-bottom: 20px;
 }
 .t-destaque {
     font-size: 38px;
-    color: #1B8FC0;
-    border-bottom: solid 3px #1B8FC0;
+    color: var(--cor6);
+    border-bottom: solid 3px var(--cor6);
 }
 .p-destaque {
     text-align: center;
     font-size: 24px;
     font-weight: 600;
-    color: #0D4180;
+    color: var(--cor7);
     margin-bottom: 30px;
 }
 p {

@@ -1,8 +1,8 @@
 .base-button {
-    background-color: #0176D3;
+    background-color: var(--cor8);
     border-radius: 5px;
     width: 200px;
     height: 60px;
-    color: white;
+    color: var(--cor15);
     font-weight: 600;
 }

@@ -2,9 +2,9 @@ footer {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
-    background-color: #c4e8f0;
+    background-color: var(--cor1);
     bottom: 0;
-    border-top: solid 1px #9BA6BC;
+    border-top: solid 1px var(--cor2);
     padding: 35px;
     gap: 50px;
 }
@@ -29,12 +29,12 @@ footer {
 }
 .footer-column > p {
     font-weight: 600;
-    color: #032D60;
+    color: var(--cor3);
     margin-bottom: 10px;
 }
 .footer-column > a {
     font-size: 14px;
-    color: #032D60;
+    color: var(--cor3);
     margin-bottom: 2px;
 }
 #pagina-alunos {

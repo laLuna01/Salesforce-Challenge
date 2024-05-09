@@ -61,8 +61,21 @@ const Header = () => {
   // função de mudar cores do site
   const cores = {
     padrao: {
-      corFundo: "#ffffff",
-      corTexto: "#000000",
+      cor1: "#C4E8F0",
+      cor2: "#9BA6BC",
+      cor3: "#032D60",
+      cor4: "#E9F1FD",
+      cor5: "#CDDEF7",
+      cor6: "#1B8FC0",
+      cor7: "#0D4180",
+      cor8: "#0176D3",
+      cor9: "#00C3FF",
+      cor10: "#111169",
+      cor11: "#0869E7",
+      cor12: "#20083F",
+      cor13: "#0000FF",
+      cor14: "#9CC3FF",
+      cor15: "#EEEEEE"
     },
     altoContraste: {
       corFundo: "#000000",

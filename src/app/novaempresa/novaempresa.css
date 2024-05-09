@@ -8,7 +8,7 @@
     display: flex;
     flex-direction: column;
     margin: auto;
-    border: 1px solid #9BA6BC;
+    border: 1px solid var(--cor2);
     margin-bottom: 30px;
     border-radius: 20px;
     background-color: #f0f8ff71;
@@ -23,18 +23,18 @@
 .t-form {
     font-size: 40px;
     font-weight: 600;
-    color: #032D60;
+    color: var(--cor3);
 }
 .input-novaempresa {
     width: 70%;
-    border: 1px solid #9BA6BC;
+    border: 1px solid var(--cor2);
     border-radius: 10px;
     padding: 10px;
     box-shadow: 2px 2px 5px rgb(168, 168, 168);
 }
 .p-checkbox {
     font-weight: 600;
-    color: #111169;
+    color: var(--cor10);
 }
 .checkbox {
     display: flex;
@@ -52,7 +52,7 @@
     gap: 10px;
 }
 .itens-escondidos a {
-    color: #0D4180;
+    color: var(--cor7);
     font-weight: 500;
 }
 .itens-escondidos a:hover {
@@ -62,16 +62,16 @@
     text-align: center;
     width: 250px;
     height: 40px;
-    background: #0176D3;
+    background: var(--cor8);
     font-size: 18px;
-    color: #ffffff;
+    color: var(--cor15);
     font-weight: 600;
     border-radius: 30px;
     transition: transform .6s;
 }
 .botao-cadastrar:hover {
     transform: scale(1.1);
-    background: #0869E7;
+    background: var(--cor11);
 }
 .voltar-p {
     font-size: 14px;
@@ -79,7 +79,7 @@
     margin: 15px 0;
 }
 .voltar-p a {
-    color: #0869E7;
+    color: var(--cor11);
     font-weight: 500;
 }
 .voltar-p a:hover {

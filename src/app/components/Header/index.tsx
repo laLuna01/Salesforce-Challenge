@@ -2,9 +2,12 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import "./header.css";
+import { stringify } from "querystring";
 
 let zoomCount = 0;
 let zoom = 1;
+let corCount = 0;
+let cor = 1;
 
 const Header = () => {
   // menu hamburguer
@@ -59,33 +62,100 @@ const Header = () => {
   });
 
   // função de mudar cores do site
-  const cores = {
-    padrao: {
-      cor1: "#C4E8F0",
-      cor2: "#9BA6BC",
-      cor3: "#032D60",
-      cor4: "#E9F1FD",
-      cor5: "#CDDEF7",
-      cor6: "#1B8FC0",
-      cor7: "#0D4180",
-      cor8: "#0176D3",
-      cor9: "#00C3FF",
-      cor10: "#111169",
-      cor11: "#0869E7",
-      cor12: "#20083F",
-      cor13: "#0000FF",
-      cor14: "#9CC3FF",
-      cor15: "#EEEEEE"
+  const cores: any = {
+    1: {
+      '--cor1': '#C4E8F0',
+      '--cor2': '#9BA6BC',
+      '--cor3': '#032D60',
+      '--cor4': '#E9F1FD',
+      '--cor5': '#CDDEF7',
+      '--cor6': '#1B8FC0',
+      '--cor7': '#0D4180',
+      '--cor8': '#0176D3',
+      '--cor9': '#00C3FF',
+      '--cor10': '#111169',
+      '--cor11': '#0869E7',
+      '--cor12': '#20083F',
+      '--cor13': '#0000FF',
+      '--cor14': '#9CC3FF',
+      '--cor15': '#EEEEEE'
     },
-    altoContraste: {
-      corFundo: "#000000",
-      corTexto: "#ffffff",
+    2: {
+      '--cor1': '#000000',
+      '--cor2': '#b80000',
+      '--cor3': '#e07ba5',
+      '--cor4': '#0a9634',
+      '--cor5': '#b7c916',
+      '--cor6': '#c0581b',
+      '--cor7': '#10233a',
+      '--cor8': '#d3017b',
+      '--cor9': '#606668',
+      '--cor10': '#3030ce',
+      '--cor11': '#525127',
+      '--cor12': '#3d0388',
+      '--cor13': '#a0fcb4',
+      '--cor14': '#406499',
+      '--cor15': '#000000'
     },
-    coresInvertidas: {
-      corFundo: "#ffcccc",
-      corTexto: "#330000",
-    },
+    3: {
+      '--cor1': '#964444',
+      '--cor2': '#380909',
+      '--cor3': '#7be0ca',
+      '--cor4': '#b0c76f',
+      '--cor5': '#c9168d',
+      '--cor6': '#559da7',
+      '--cor7': '#5f1283',
+      '--cor8': '#3b0324',
+      '--cor9': '#ffffff',
+      '--cor10': '#202050',
+      '--cor11': '#00ff15',
+      '--cor12': '#1341a3',
+      '--cor13': '#d61212',
+      '--cor14': '#6b1f75',
+      '--cor15': '#e0adad'
+    }
   };
+
+  function carregarCor() {
+    const savedCor = parseInt(localStorage.getItem("cor") || "1");
+    const savedCorCount = parseInt(localStorage.getItem("corCount") || "0");
+    cor = savedCor;
+    corCount = savedCorCount;
+  }
+
+  function salvarCor() {
+    localStorage.setItem("cor", `${cor}`);
+    localStorage.setItem("corCount", `${corCount}`);
+  }
+
+  function aplicarCor() {
+    const themeName = cor;
+    const root = document.documentElement;
+    const theme = cores[themeName];
+
+    // Atualiza as variáveis do :root
+    for (const [key, value] of Object.entries(theme)) {
+      root.style.setProperty(key, String(value));
+    }
+  }
+
+  function mudarCor() {
+    if (corCount < 3) {
+      corCount++;
+      cor ++;
+    }
+    if (corCount === 3) {
+      corCount = 0;
+      cor = 1;
+    }
+    salvarCor();
+    aplicarCor();
+  }
+
+  window.addEventListener("load", () => {
+    carregarCor();
+    aplicarCor();
+  });
 
   return (
     <>
@@ -131,7 +201,7 @@ const Header = () => {
           />
           {isMenuOpen1 && (
             <div className="botoes-acessibilidade">
-              <button className="cores">
+              <button className="cores" onClick={mudarCor}>
                 <Image src="/cores.svg" alt="cores" width={26} height={26} />
                 Cores
               </button>

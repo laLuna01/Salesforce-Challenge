@@ -16,7 +16,7 @@ export default function Empresa() {
             </section>
             <section className="historia">
                 <div className="section-img">
-                    <Image src="/imagem-empresa1.jpg" alt="imagem " width={300} height={400}/>
+                    <Image src="/imagem-empresa1.png" alt="imagem " width={300} height={400}/>
                 </div>
                 <div className="section-content">
                     <h2 className="titulo">Conheça a nossa <br /><span className="t-destaque">História</span></h2>

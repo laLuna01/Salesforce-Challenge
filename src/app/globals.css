@@ -20,6 +20,9 @@
     --cor15: #EEEEEE;
     --cor16: #000000;
 }
+body {
+    background-color: var(--cor15);
+}
 main {
     margin-top: 20px;
     display: flex;
@@ -69,6 +72,7 @@ section {
 }
 p {
     font-size: 18px;
+    color: var(--cor16);
 }
 .section-button {
     margin-top: 35px;

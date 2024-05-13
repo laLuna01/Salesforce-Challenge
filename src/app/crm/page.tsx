@@ -26,10 +26,10 @@ export default function CRM() {
             </div>
         </section>
         <section className="funcionalidades">
-            <Funcionalidade imagem="/funcionalidade1.jpg" funcionalidade="Gerencia as informações dos clientes."/>
-            <Funcionalidade imagem="/funcionalidade2.jpg" funcionalidade="Conecta sua equipe em qualquer dispositivo."/>
-            <Funcionalidade imagem="/funcionalidade3.jpg" funcionalidade="Acompanhamento de leads mais efetivo."/>
-            <Funcionalidade imagem="/funcionalidade4.jpg" funcionalidade="Recomendações e insights instantâneos."/>
+            <Funcionalidade imagem="/funcionalidade1.png" funcionalidade="Gerencia as informações dos clientes."/>
+            <Funcionalidade imagem="/funcionalidade2.png" funcionalidade="Conecta sua equipe em qualquer dispositivo."/>
+            <Funcionalidade imagem="/funcionalidade3.png" funcionalidade="Acompanhamento de leads mais efetivo."/>
+            <Funcionalidade imagem="/funcionalidade4.png" funcionalidade="Recomendações e insights instantâneos."/>
         </section>
         <section className="beneficios">
             <div className="section-content">

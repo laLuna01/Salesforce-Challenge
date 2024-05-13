@@ -78,24 +78,26 @@ const Header = () => {
       '--cor12': '#20083F',
       '--cor13': '#0000FF',
       '--cor14': '#9CC3FF',
-      '--cor15': '#EEEEEE'
+      '--cor15': '#EEEEEE',
+      '--cor16': '#000000'
     },
     2: {
       '--cor1': '#000000',
-      '--cor2': '#b80000',
-      '--cor3': '#e07ba5',
-      '--cor4': '#0a9634',
-      '--cor5': '#b7c916',
-      '--cor6': '#c0581b',
-      '--cor7': '#10233a',
-      '--cor8': '#d3017b',
+      '--cor2': '#ffffff',
+      '--cor3': '#4fb5f8',
+      '--cor4': '#000a36',
+      '--cor5': '#003950',
+      '--cor6': '#1460c5',
+      '--cor7': '#82b3ee',
+      '--cor8': '#01a9d3',
       '--cor9': '#606668',
-      '--cor10': '#3030ce',
-      '--cor11': '#525127',
-      '--cor12': '#3d0388',
-      '--cor13': '#a0fcb4',
-      '--cor14': '#406499',
-      '--cor15': '#000000'
+      '--cor10': '#7070ff',
+      '--cor11': '#00dada',
+      '--cor12': '#ab7de7',
+      '--cor13': '#0483fa',
+      '--cor14': '#030a16',
+      '--cor15': '#000000',
+      '--cor16': '#ffffff'
     },
     3: {
       '--cor1': '#964444',
@@ -112,7 +114,8 @@ const Header = () => {
       '--cor12': '#1341a3',
       '--cor13': '#d61212',
       '--cor14': '#6b1f75',
-      '--cor15': '#e0adad'
+      '--cor15': '#e0adad',
+      '--cor16': '#000000'
     }
   };
 
@@ -132,10 +135,42 @@ const Header = () => {
     const themeName = cor;
     const root = document.documentElement;
     const theme = cores[themeName];
-
+  
     // Atualiza as variáveis do :root
     for (const [key, value] of Object.entries(theme)) {
       root.style.setProperty(key, String(value));
+    }
+
+    var styleElement: any;
+    if (corCount === 1) {
+      var additionalCss = `
+            .icone {
+              filter: invert(100%);
+            }
+            img {
+              filter: saturate(130%) contrast(120%) brightness(120%);
+            }
+            .contato-input {
+              border: 1px solid white;
+            }
+            .page {
+              background-image: url("./background1.jpg");
+            }
+            .form {
+              background-color: #040713d1;
+            }
+            .checkbox-item {
+              color: white;
+            }
+        `;
+        styleElement = document.createElement('style');
+        styleElement.textContent = additionalCss;
+        document.head.appendChild(styleElement);
+    } else {
+      var elementoParaExcluir = document.querySelector('head > style');
+      if (elementoParaExcluir) {
+          elementoParaExcluir.remove();
+      }
     }
   }
 
@@ -193,20 +228,15 @@ const Header = () => {
           </nav>
         </div>
         <button className="acessibilidade" onClick={toggleMenu1}>
-          <Image
-            src="/acessibilidade1.png"
-            alt="icone de acessibilidade"
-            width={26}
-            height={26}
-          />
+          <Image className="icone" src="/acessibilidade1.png" alt="icone de acessibilidade" width={26} height={26} />
           {isMenuOpen1 && (
             <div className="botoes-acessibilidade">
               <button className="cores" onClick={mudarCor}>
-                <Image src="/cores.svg" alt="cores" width={26} height={26} />
+                <Image className="icone" src="/cores.svg" alt="cores" width={26} height={26} />
                 Cores
               </button>
-              <button className="tamanho" onClick={aumentar}>
-                <Image src="/texto.svg" alt="texto" width={26} height={26} />
+              <button id="tamanho" onClick={aumentar}>
+                <Image className="icone" src="/texto.svg" alt="texto" width={26} height={26} />
                 Tamanho
               </button>
             </div>
@@ -214,11 +244,11 @@ const Header = () => {
         </button>
         <div className="itens-direita">
           <button className="icone-pesquisar">
-            <Image src="/lupa1.png" alt="pesquisar" width={26} height={26} />
+            <Image className="icone" src="/lupa1.png" alt="pesquisar" width={26} height={26} />
           </button>
           <button className="icone-login">
             <a href="./login">
-              <Image src="/avatar1.png" alt="login" width={25} height={25} />
+              <Image className="icone" src="/avatar1.png" alt="login" width={25} height={25} />
             </a>
           </button>
           <button className="menu-hamburger" onClick={toggleMenu}></button>
@@ -246,12 +276,7 @@ const Header = () => {
               </nav>
               <button className="login-dropdown">
                 <a href="./login">
-                  <Image
-                    src="/avatar1.png"
-                    alt="login"
-                    width={25}
-                    height={25}
-                  />
+                  <Image className="icone" src="/avatar1.png" alt="login" width={25} height={25} />
                   <p>Login</p>
                 </a>
               </button>

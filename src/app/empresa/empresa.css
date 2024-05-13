@@ -5,6 +5,7 @@
 .lista-impacto > li, .lista-valores > li {
     list-style: circle;
     margin-bottom: 12px;
+    color: var(--cor16);
 }
 li::marker {
     color: var(--cor13);

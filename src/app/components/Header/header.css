@@ -82,8 +82,9 @@
     gap: 30px;
     font-weight: 700;
     padding-left: 20px;
+    color: var(--cor16);
 }
-.tamanho {
+#tamanho {
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
 }
@@ -93,7 +94,7 @@
 .cores:hover {
     border-bottom: 1px solid var(--cor5);
 }
-.tamanho:hover {
+#tamanho:hover {
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
     border-top: 1px solid var(--cor5);

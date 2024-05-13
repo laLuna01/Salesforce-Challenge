@@ -11,6 +11,7 @@
 .lista-contato > li {
     list-style: circle;
     margin-bottom: 12px;
+    color: var(--cor16);
 }
 li::marker {
     color: var(--cor13);

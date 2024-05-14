@@ -6,22 +6,22 @@ const Footer = () => {
         <>
             <footer>
                 <div className="footer-column" id="footer-1">
-                    <Image src="/logo.png" alt="logo salesforce" width={90} height={70}/>
+                    <Image className="logo-footer" src="/logo.png" alt="logo salesforce" width={90} height={70}/>
                     <div className="redes-sociais">
                         <a href="">
-                            <Image src="/facebook1.png" alt="facebook" width={20} height={20}/>
+                            <Image className="icone" src="/facebook1.png" alt="facebook" width={20} height={20}/>
                         </a>
                         <a href="">
-                            <Image src="/instagram1.png" alt="instagram" width={20} height={20}/>
+                            <Image className="icone" src="/instagram1.png" alt="instagram" width={20} height={20}/>
                         </a>
                         <a href="">
-                            <Image src="/linkedin1.png" alt="linkedin" width={20} height={20}/>
+                            <Image className="icone" src="/linkedin1.png" alt="linkedin" width={20} height={20}/>
                         </a>
                         <a href="">
-                            <Image src="/twitter.png" alt="twitter" width={20} height={20}/>
+                            <Image className="icone" src="/twitter.png" alt="twitter" width={20} height={20}/>
                         </a>
                         <a href="">
-                            <Image src="/youtube1.png" alt="youtube" width={20} height={20}/>
+                            <Image className="icone" src="/youtube1.png" alt="youtube" width={20} height={20}/>
                         </a>
                     </div>
                 </div>

@@ -100,21 +100,21 @@ const Header = () => {
       "--cor16": "#ffffff",
     },
     3: {
-      "--cor1": "#ffffff",
-      "--cor2": "#ffffff",
-      "--cor3": "#4fb5f8",
-      "--cor4": "#000a36",
-      "--cor5": "#003950",
-      "--cor6": "#1460c5",
-      "--cor7": "#82b3ee",
-      "--cor8": "#01a9d3",
+      "--cor1": "#1e1e1e",
+      "--cor2": "#4d2e13",
+      "--cor3": "#ff5c0e",
+      "--cor4": "#3d1a06",
+      "--cor5": "#b3726f",
+      "--cor6": "#d52a03",
+      "--cor7": "#d15a47",
+      "--cor8": "#d38901",
       "--cor9": "#606668",
-      "--cor10": "#7070ff",
-      "--cor11": "#00dada",
-      "--cor12": "#ab7de7",
-      "--cor13": "#0483fa",
-      "--cor14": "#030a16",
-      "--cor15": "#000000",
+      "--cor10": "#c17400",
+      "--cor11": "#da5000",
+      "--cor12": "#c55b00",
+      "--cor13": "#c38700",
+      "--cor14": "#675b4a",
+      "--cor15": "#2f2f2f",
       "--cor16": "#ffffff",
     },
     4: {
@@ -192,12 +192,42 @@ const Header = () => {
                 .checkbox-item {
                   color: white;
                 }
+                .links-projeto > a {
+                  filter: invert(100%);
+                }
+                .links-projeto > a :first-child {
+                  filter: invert(100%);
+                }
+                .links-projeto > a {
+                  filter: invert(100%);
+                }
+                .figma :last-child {
+                  filter: invert(100%);
+                }
             `;
         } 
         if (corCount === 2) {
           var additionalCss = `
-                main {
-                  display: flex;
+                .logo-header, .logo-footer, .icone, .imagem-funcionalidade {
+                  filter: invert(100%);
+                }
+                .card-aluno-bottom > a {
+                  filter: invert(100%);
+                }
+                .links-projeto > a {
+                  filter: invert(100%);
+                }
+                .links-projeto > a :first-child {
+                  filter: invert(100%);
+                }
+                .form {
+                  background-color: #04071378;
+                }
+                .checkbox-item > label {
+                  filter: invert(100%);
+                }
+                .page {
+                  background-image: url("./background2.jpg");
                 }
             `;
         }

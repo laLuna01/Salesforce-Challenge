@@ -1,8 +1,12 @@
 "use client";
 import { useState, useEffect } from "react";
 import "./novaempresa.css";
+import Aviso from "../components/Aviso";
  
 export default function NovaEmpresa() {
+
+    const [mostrarAviso, setMostrarAviso] = useState(false);
+    let mensagem = "";
     
     const [nome, setNome] = useState("")
     const [setor, setSetor] = useState("")
@@ -39,19 +43,26 @@ export default function NovaEmpresa() {
             tamanho,
             brasileira: Boolean(brasileira)
         };
-        
-        console.log(JSON.stringify(dadosEmpresa));
 
         const response = await fetch("http://localhost:8080/empresa", {
             method: "POST",
             headers: myHeaders,
             body: JSON.stringify(dadosEmpresa)
         });
+
+        if (response.statusText === "Created") {
+            setMostrarAviso(true);
+            mensagem = "Empresa cadastrada"
+        } else {
+            setMostrarAviso(true);
+            mensagem = "Ocorreu um erro"
+        }
     };
 
     return (
         <>
             <section className="page">
+                {mostrarAviso && <Aviso message={mensagem} />}
                 <form className="form">
                     <h2 className="t-form">Cadastrar Empresa</h2>
                     <input value={nome} onChange={changeNome} className="input-novaempresa" id="nome" type="text" placeholder="Nome" required />

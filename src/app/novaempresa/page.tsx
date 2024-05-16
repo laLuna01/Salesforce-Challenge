@@ -1,12 +1,10 @@
 "use client";
 import { useState, useEffect } from "react";
 import "./novaempresa.css";
-import Aviso from "../components/Aviso";
  
 export default function NovaEmpresa() {
-
     const [mostrarAviso, setMostrarAviso] = useState(false);
-    let mensagem = "";
+    const [mensagem, setMensagem] = useState<string>("");
     
     const [nome, setNome] = useState("")
     const [setor, setSetor] = useState("")
@@ -52,17 +50,31 @@ export default function NovaEmpresa() {
 
         if (response.statusText === "Created") {
             setMostrarAviso(true);
-            mensagem = "Empresa cadastrada"
+            setMensagem("Empresa cadastrada");
         } else {
             setMostrarAviso(true);
-            mensagem = "Ocorreu um erro"
+            setMensagem("Ocorreu um erro");
         }
+        
     };
+
+    const fechar = () => {
+        setMostrarAviso(false);
+    }
 
     return (
         <>
             <section className="page">
-                {mostrarAviso && <Aviso message={mensagem} />}
+                {mostrarAviso &&
+                    <div className="alert-container">
+                        <div className="alert">
+                            <span onClick={fechar} className="close-btn">
+                            &times;
+                            </span>
+                            <p>{mensagem}</p>
+                        </div>
+                    </div>
+                }
                 <form className="form">
                     <h2 className="t-form">Cadastrar Empresa</h2>
                     <input value={nome} onChange={changeNome} className="input-novaempresa" id="nome" type="text" placeholder="Nome" required />

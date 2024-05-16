@@ -30,7 +30,7 @@ export default function NovaEmpresa() {
 
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
-
+    
     const enviarDados = async (event: any) => {
         event.preventDefault();
 
@@ -42,20 +42,25 @@ export default function NovaEmpresa() {
             brasileira: Boolean(brasileira)
         };
 
-        const response = await fetch("http://localhost:8080/empresa", {
-            method: "POST",
-            headers: myHeaders,
-            body: JSON.stringify(dadosEmpresa)
-        });
+        try {
+            const response = await fetch("http://localhost:8080/empresa", {
+                method: "POST",
+                headers: myHeaders,
+                body: JSON.stringify(dadosEmpresa)
+            });
 
-        if (response.statusText === "Created") {
+            if (response.statusText === "Created") {
+                setMostrarAviso(true);
+                setMensagem("Empresa cadastrada");
+            } else {
+                setMostrarAviso(true);
+                setMensagem("Ocorreu um erro");
+            }
+        } catch (error) {
+            console.error("Erro ao enviar dados:", error);
             setMostrarAviso(true);
-            setMensagem("Empresa cadastrada");
-        } else {
-            setMostrarAviso(true);
-            setMensagem("Ocorreu um erro");
+            setMensagem("Falha na conexão");
         }
-        
     };
 
     const fechar = () => {

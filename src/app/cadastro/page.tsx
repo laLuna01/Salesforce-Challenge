@@ -3,6 +3,9 @@ import { useState, useEffect } from "react";
 import "./cadastro.css";
  
 export default function Cadastro() {
+    let empresa_id = 0;
+    let temEmpresa = true;
+
     const [mostrarAviso, setMostrarAviso] = useState(false);
     const [mensagem, setMensagem] = useState<string>("");
     
@@ -38,17 +41,13 @@ export default function Cadastro() {
     const pegarEmpresa = async () => {
         try {
             const response = await fetch("http://localhost:8080/empresa/cnpj/" + empresa);
-            const result = await response.json()
-            setEmpresa(result.id)
-            console.log(empresa)
-            // if (response.statusText === "Created") {
-            //     setMostrarAviso(true);
-            //     setMensagem("Empresa cadastrada");
-            //     // setEmpresa("")
-            // } else {
-            //     setMostrarAviso(true);
-            //     setMensagem("Ocorreu um erro");
-            // }
+            console.log(response.statusText)
+            if (response.statusText === "OK") {
+                const result = await response.json()
+                empresa_id = result.id
+            } else {
+                temEmpresa = false;
+            }
         } catch (error) {
             console.error("Erro ao enviar dados:", error);
             setMostrarAviso(true);
@@ -61,16 +60,20 @@ export default function Cadastro() {
 
         await pegarEmpresa()
 
+        if (temEmpresa === false) {
+            setMostrarAviso(true);
+            setMensagem("Empresa não cadastrada");
+            return
+        }
+
         const dadosCliente = {
             nome,
             sobrenome,
             cpf,
             email,
             senha,
-            empresa 
+            empresa_id
         };
-
-        console.log(JSON.stringify(dadosCliente))
 
         try {
             const response = await fetch("http://localhost:8080/cliente", {

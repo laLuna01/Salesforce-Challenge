@@ -97,16 +97,16 @@ p {
 .alert {
   position: relative;
   padding: 15px;
-  background-color: #3698f4;
-  border: 1px solid white;
-  color: white;
+  background-color: var(--cor11);
+  border: 1px solid var(--cor15);
+  color: var(--cor15);
   border-radius: 5px;
   margin-top: 20px;
   padding: 30px;
 }
 
 .alert > p {
-  color: white;
+  color: var(--cor15);
 }
 
 .close-btn {

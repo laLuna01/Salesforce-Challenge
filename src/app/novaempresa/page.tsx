@@ -92,7 +92,7 @@ export default function NovaEmpresa() {
                             <label htmlFor="pequena">Pequena</label>
                         </div>
                         <div className="checkbox-item">
-                            <input value="Média" onChange={changeTamanho} type="radio" name="tamanho" id="media" required />
+                            <input value="Media" onChange={changeTamanho} type="radio" name="tamanho" id="media" required />
                             <label htmlFor="media">Média</label>
                         </div>
                         <div className="checkbox-item">

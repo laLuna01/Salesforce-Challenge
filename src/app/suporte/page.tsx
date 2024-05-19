@@ -27,7 +27,7 @@ export default function Suporte() {
                         <input className="contato-input" type="text" placeholder="Nome completo" required/>
                         <input className="contato-input" type="email" placeholder="E-mail" required/>
                         <input className="contato-input" type="phone" placeholder="Telefone" required/>
-                        <textarea className="contato-input" name="mensagem-contato" id="mensagem-contato" cols="30" rows="4" placeholder="Mensagem" required></textarea>
+                        <textarea className="contato-input" name="mensagem-contato" id="mensagem-contato" cols={30} rows={4} placeholder="Mensagem" required></textarea>
                         <button className="enviar" type="submit">Enviar</button>
                     </form>
                 </div>

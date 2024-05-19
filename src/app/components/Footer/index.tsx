@@ -8,19 +8,19 @@ const Footer = () => {
                 <div className="footer-column" id="footer-1">
                     <Image className="logo-footer" src="/logo.png" alt="logo salesforce" width={90} height={70}/>
                     <div className="redes-sociais">
-                        <a href="">
+                        <a href="https://www.facebook.com/SalesforceBrasil/" target="_blank">
                             <Image className="icone" src="/facebook1.png" alt="facebook" width={20} height={20}/>
                         </a>
-                        <a href="">
+                        <a href="https://www.instagram.com/salesforcebrasil/" target="_blank">
                             <Image className="icone" src="/instagram1.png" alt="instagram" width={20} height={20}/>
                         </a>
-                        <a href="">
+                        <a href="https://br.linkedin.com/company/salesforce" target="_blank">
                             <Image className="icone" src="/linkedin1.png" alt="linkedin" width={20} height={20}/>
                         </a>
-                        <a href="">
+                        <a href="https://twitter.com/salesforce_br" target="_blank">
                             <Image className="icone" src="/twitter.png" alt="twitter" width={20} height={20}/>
                         </a>
-                        <a href="">
+                        <a href="https://www.youtube.com/c/SalesforceBrasil" target="_blank">
                             <Image className="icone" src="/youtube1.png" alt="youtube" width={20} height={20}/>
                         </a>
                     </div>

@@ -37,7 +37,7 @@ export default function Login() {
         try {
             const response = await fetch("http://localhost:8080/cliente");
             const result = await response.json();
-            result.forEach(usuario => {
+            result.forEach((usuario: any) => {
                 if (usuario.email === email && usuario.senha === senha) {
                     userID = usuario.id;
                     console.log(userID)

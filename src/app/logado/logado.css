@@ -1,0 +1,56 @@
+.logado {
+    display: flex;
+    flex-direction: column;
+}
+.informacoes {
+    width: 100%;
+    padding-top: 30px;
+    padding-bottom: 50px;
+    display: flex;
+    justify-content: space-evenly;
+}
+.card {
+    background-color: var(--cor14);
+    padding: 40px;
+    border-radius: 20px;
+    border: 1px solid var(--cor11);
+    width: 400px;
+}
+.info {
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: var(--cor3);
+}
+.dado {
+    padding-bottom: 10px;
+}
+.dado > span{
+    font-size: 19px;
+    font-weight: 600;
+    margin-right: 5px;
+}
+
+@media screen and (max-width: 1080px) {
+    .logado {
+        gap: 0px;
+    }
+}
+@media screen and (max-width: 1000px) {
+    .informacoes {
+        flex-direction: column;
+        width: fit-content;
+        gap: 30px;
+    }
+}
+@media screen and (max-width: 715px) {
+    .dado {
+        font-size: 18px;
+    }
+}
+@media screen and (max-width: 460px) {
+    .card {
+        padding: 30px;
+        width: 270px;
+    }
+}

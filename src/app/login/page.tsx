@@ -41,6 +41,7 @@ export default function Login() {
                 if (usuario.email === email && usuario.senha === senha) {
                     userID = usuario.id;
                     console.log(userID)
+                    localStorage.setItem('userID', String(userID));
                     setShouldRedirect(true);
                     localStorage.setItem('shouldRedirect', 'true');
                 }
@@ -59,6 +60,7 @@ export default function Login() {
     const fechar = () => {
         setMostrarAviso(false);
     }
+    
     return (
         <>
             <section className="page">

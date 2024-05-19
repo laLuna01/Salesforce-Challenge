@@ -40,10 +40,11 @@ export default function Cadastro() {
 
     const pegarEmpresa = async () => {
         try {
-            const response = await fetch("http://localhost:8080/empresa/cnpj/" + empresa);
+            const response = await fetch("http://localhost:8080/empresa/cnpj/" + empresa.replace(/\D/g, ''));
             console.log(response.statusText)
             if (response.statusText === "OK") {
                 const result = await response.json()
+                console.log(result)
                 empresa_id = result.id
             } else {
                 temEmpresa = false;
@@ -65,6 +66,8 @@ export default function Cadastro() {
             setMensagem("Empresa não cadastrada");
             return
         }
+
+        cpf.replace(/\D/g, '')
 
         const dadosCliente = {
             nome,

@@ -1,9 +1,23 @@
 "use client";
 import { useState, useEffect } from "react";
+import { useRouter } from 'next/navigation';
 import "./login.css";
  
 export default function Login() {
+    let { push } = useRouter();
+
     let userID = 0;
+
+    const [shouldRedirect, setShouldRedirect] = useState(() => {
+        return localStorage.getItem('shouldRedirect') === 'true';
+    });
+
+    useEffect(() => {
+        if (shouldRedirect) {
+            push('/logado');
+        }
+    }, [shouldRedirect, push]);
+
     const [mostrarAviso, setMostrarAviso] = useState(false);
     const [mensagem, setMensagem] = useState<string>("");
 
@@ -26,6 +40,9 @@ export default function Login() {
             result.forEach(usuario => {
                 if (usuario.email === email && usuario.senha === senha) {
                     userID = usuario.id;
+                    console.log(userID)
+                    setShouldRedirect(true);
+                    localStorage.setItem('shouldRedirect', 'true');
                 }
             });
         } catch (error) {

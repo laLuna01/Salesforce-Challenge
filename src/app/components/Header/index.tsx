@@ -161,7 +161,6 @@ const Header = () => {
 
     var styleElement = document.getElementById('meu-estilo');
     var additionalCss: string = '';
-    console.log(corCount);
     if (corCount < 4) {
       // Verifica se o elemento existe
       if (styleElement !== null) {

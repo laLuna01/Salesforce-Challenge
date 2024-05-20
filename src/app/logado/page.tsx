@@ -1,106 +1,101 @@
 "use client"
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import Button from "../components/Button"
 import "./logado.css";
 
 export default function Logado() {
-    let userID = localStorage.getItem('userID')
+    let [carregando, setCarregando] = useState(true);
 
-    const [nome, setNome] = useState("");
-    const [sobrenome, setSobrenome] = useState("");
-    const [cpf, setCpf] = useState("")
-    const [email, setEmail] = useState("")
-    const [empresa_id, setEmpresa_id] = useState("")
+    let userID = useRef<string | null>(null);
 
-    const [empresa, setEmpresa] = useState("")
-    const [setor, setSetor] = useState("")
-    const [cnpj, setCnpj] = useState("")
-    const [tamanho, setTamanho] = useState("")
-    const [brasileira, setBrasileira] = useState("")
+    let nome = useRef<string | null>(null);
+    let sobrenome = useRef<string | null>(null);
+    let cpf = useRef<string | null>(null);
+    let email = useRef<string | null>(null);
+    let empresa_id = useRef<string | null>(null);
 
-    const pegarInformacao = async () => {
-        try {
-            const response = await fetch("http://localhost:8080/cliente/id/" + userID);
-            const result = await response.json();
+    let empresa = useRef<string | null>(null);
+    let setor = useRef<string | null>(null);
+    let cnpj = useRef<string | null>(null);
+    let tamanho = useRef<string | null>(null);
+    let brasileira = useRef<string | null>(null);
 
-            setNome(result.nome)
-            setSobrenome(result.sobrenome)
-            setCpf(result.cpf)
-            setEmail(result.email)
-            setEmpresa_id(result.empresa_id)
+    const pegarInformacao = useCallback(async () => {
+        if (userID.current != null) {
+            try {
+                const response = await fetch("http://localhost:8080/cliente/id/" + userID.current);
+                const result = await response.json();
+                console.log(result)
 
-        } catch (error) {
-            console.error("Erro ao pegar dados:", error);
-        }
-        try {
-            const response = await fetch("http://localhost:8080/empresa/id/" + empresa_id);
-            const result = await response.json();
+                nome.current = result.nome
+                sobrenome.current = result.sobrenome
+                cpf.current = result.cpf
+                email.current = result.email
+                empresa_id.current = result.empresa_id
 
-            setEmpresa(result.nome)
-            setSetor(result.setor)
-            setCnpj(result.cnpj)
-            setTamanho(result.tamanho)
-
-            if (result.brasileira === false)  {
-                setBrasileira("Não")
+            } catch (error) {
+                console.error("Erro ao pegar dados:", error);
             }
-            if (result.brasileira === true)  {
-                setBrasileira("Sim")
-            }
+            try {
+                const response = await fetch("http://localhost:8080/empresa/id/" + empresa_id.current);
+                const result = await response.json();
+                console.log(result)
 
-        } catch (error) {
-            console.error("Erro ao pegar dados:", error);
+                empresa.current = result.nome
+                setor.current = result.setor
+                cnpj.current = result.cnpj
+                tamanho.current = result.tamanho
+
+                if (result.brasileira === false)  {
+                    brasileira.current = "Não"
+                }
+                if (result.brasileira === true)  {
+                    brasileira.current = "Sim"
+                }
+                setCarregando(false)
+                console.log(carregando)
+            } catch (error) {
+                console.error("Erro ao pegar dados:", error);
+            }
         }
-    };
-    
-    pegarInformacao();
+    }, [carregando]);
 
     const sair = () => {
         localStorage.setItem('shouldRedirect', 'false');
     }  
 
-    const [mostrarAviso, setMostrarAviso] = useState(false);
-    const [mensagem, setMensagem] = useState<string>("");
+    useEffect(() => {
+        userID.current = localStorage.getItem('userID')
+        pegarInformacao();
+    }, [pegarInformacao]);
 
-    const fechar = () => {
-        setMostrarAviso(false);
+    if (carregando) {
+        console.log(carregando + " bah")
+        return <p>Carregando...</p>;
+    } else {
+
+    return <section className="logado">
+            <h1 className="titulo">{"Olá " + nome.current + " " + sobrenome.current}</h1>
+            <div className="informacoes">
+                <div className="card">
+                    <h2 className="info">Informações do Usuário</h2>
+                    <p className="dado"><span>Nome: </span>{nome.current}</p>
+                    <p className="dado"><span>Sobrenome: </span>{sobrenome.current}</p>
+                    <p className="dado"><span>CPF: </span>{cpf.current}</p>
+                    <p className="dado"><span>Email: </span>{email.current}</p>
+                </div>
+                <div className="card">
+                    <h2 className="info">Informações da Empresa</h2>
+                    <p className="dado"><span>Nome: </span>{empresa.current}</p>
+                    <p className="dado"><span>Setor: </span>{setor.current}</p>
+                    <p className="dado"><span>CNPJ: </span>{cnpj.current}</p>
+                    <p className="dado"><span>Tamanho: </span>{tamanho.current}</p>
+                    <p className="dado"><span>Brasileira: </span>{brasileira.current}</p>
+                </div>
+            </div>
+            <div onClick={sair}>
+                <Button texto="Sair" link="./login"/>
+            </div>
+        </section>;
     }
-
-    return (
-        <>
-            {mostrarAviso &&
-                <div className="alert-container">
-                    <div className="alert">
-                        <span onClick={fechar} className="close-btn">
-                        &times;
-                        </span>
-                        <p>{mensagem}</p>
-                    </div>
-                </div>
-            }
-            <section className="logado">
-                <h1 className="titulo">{"Olá " + nome + " " + sobrenome}</h1>
-                <div className="informacoes">
-                    <div className="card">
-                        <h2 className="info">Informações do Usuário</h2>
-                        <p className="dado"><span>Nome: </span>{nome}</p>
-                        <p className="dado"><span>Sobrenome: </span>{sobrenome}</p>
-                        <p className="dado"><span>CPF: </span>{cpf}</p>
-                        <p className="dado"><span>Email: </span>{email}</p>
-                    </div>
-                    <div className="card">
-                        <h2 className="info">Informações da Empresa</h2>
-                        <p className="dado"><span>Nome: </span>{empresa}</p>
-                        <p className="dado"><span>Setor: </span>{setor}</p>
-                        <p className="dado"><span>CNPJ: </span>{cnpj}</p>
-                        <p className="dado"><span>Tamanho: </span>{tamanho}</p>
-                        <p className="dado"><span>Brasileira: </span>{brasileira}</p>
-                    </div>
-                </div>
-                <div onClick={sair}>
-                    <Button texto="Sair" link="./login"/>
-                </div>
-            </section>
-        </>
-    )
 }

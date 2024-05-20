@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useRouter } from 'next/navigation';
 import "./login.css";
  
@@ -8,15 +8,23 @@ export default function Login() {
 
     let userID = 0;
 
-    const [shouldRedirect, setShouldRedirect] = useState(() => {
-        return localStorage.getItem('shouldRedirect') === 'true';
-    });
+    const [carregando, setCarregando] = useState(true);
+
+    let [redireciona, setRedireciona] = useState(false);
+
+    setTimeout(() => {
+        setCarregando(false);
+    }, 5000);
 
     useEffect(() => {
-        if (shouldRedirect) {
-            push('/logado');
+        if (localStorage.getItem('shouldRedirect') === 'true') {
+            setRedireciona(true)
         }
-    }, [shouldRedirect, push]);
+      }, []);
+
+    if (redireciona) {
+        push('/logado');
+    }
 
     const [mostrarAviso, setMostrarAviso] = useState(false);
     const [mensagem, setMensagem] = useState<string>("");
@@ -42,7 +50,7 @@ export default function Login() {
                     userID = usuario.id;
                     console.log(userID)
                     localStorage.setItem('userID', String(userID));
-                    setShouldRedirect(true);
+                    setRedireciona(true)
                     localStorage.setItem('shouldRedirect', 'true');
                 }
             });
@@ -61,9 +69,12 @@ export default function Login() {
         setMostrarAviso(false);
     }
     
-    return (
-        <>
-            <section className="page">
+    if (carregando) {
+        console.log(carregando + " bah")
+        return <p>Carregando...</p>;
+    } else {
+
+    return <section className="page">
                 {mostrarAviso &&
                     <div className="alert-container">
                         <div className="alert">
@@ -82,6 +93,5 @@ export default function Login() {
                     <p className="cadastrar-p">Ainda não é cadastrado? <a href="./cadastro">Criar conta</a> </p>
                 </form>
             </section>
-        </>
-    );
+        }
 }

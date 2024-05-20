@@ -27,7 +27,16 @@ const Header = () => {
   // função de mudar tamanho do site
   const zoomIncrement = 0.2;
 
-  
+  useEffect(() => {
+    function carregarZoom() {
+      const savedZoom = parseFloat(localStorage.getItem("zoom") || "1");
+      const savedZoomCount = parseInt(localStorage.getItem("zoomCount") || "0");
+      zoom = savedZoom;
+      zoomCount = savedZoomCount;
+    }
+    carregarZoom();
+    aplicarZoom();
+  }, []);
 
   function salvarZoom() {
     localStorage.setItem("zoom", `${zoom}`);
@@ -50,17 +59,6 @@ const Header = () => {
     salvarZoom();
     aplicarZoom();
   }
-
-  useEffect(() => {
-      function carregarZoom() {
-        const savedZoom = parseFloat(localStorage.getItem("zoom") || "1");
-        const savedZoomCount = parseInt(localStorage.getItem("zoomCount") || "0");
-        zoom = savedZoom;
-        zoomCount = savedZoomCount;
-      }
-      carregarZoom();
-      aplicarZoom();
-  }, []);
 
   // função de mudar cores do site
   const cores: any = {

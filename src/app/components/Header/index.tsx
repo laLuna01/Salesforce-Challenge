@@ -2,7 +2,6 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import "./header.css";
-import { stringify } from "querystring";
 
 let zoomCount = 0;
 let zoom = 1;
@@ -10,6 +9,8 @@ let corCount = 0;
 let cor = 1;
 
 const Header = () => {
+  const [carregado, setCarregado] = useState(false);
+  
   // menu hamburguer
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -265,7 +266,9 @@ const Header = () => {
     }
     carregarCor();
     aplicarCor();
-  });
+    setCarregado(true)
+  }, [aplicarCor]);
+
 
   return (
     <>

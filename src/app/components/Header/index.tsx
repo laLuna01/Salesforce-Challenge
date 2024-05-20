@@ -27,12 +27,7 @@ const Header = () => {
   // função de mudar tamanho do site
   const zoomIncrement = 0.2;
 
-  function carregarZoom() {
-    const savedZoom = parseFloat(localStorage.getItem("zoom") || "1");
-    const savedZoomCount = parseInt(localStorage.getItem("zoomCount") || "0");
-    zoom = savedZoom;
-    zoomCount = savedZoomCount;
-  }
+  
 
   function salvarZoom() {
     localStorage.setItem("zoom", `${zoom}`);
@@ -56,10 +51,16 @@ const Header = () => {
     aplicarZoom();
   }
 
-  window.addEventListener("load", () => {
-    carregarZoom();
-    aplicarZoom();
-  });
+  useEffect(() => {
+      function carregarZoom() {
+        const savedZoom = parseFloat(localStorage.getItem("zoom") || "1");
+        const savedZoomCount = parseInt(localStorage.getItem("zoomCount") || "0");
+        zoom = savedZoom;
+        zoomCount = savedZoomCount;
+      }
+      carregarZoom();
+      aplicarZoom();
+  }, []);
 
   // função de mudar cores do site
   const cores: any = {
@@ -136,13 +137,6 @@ const Header = () => {
       "--cor16": "#000000",
     },
   };
-
-  function carregarCor() {
-    const savedCor = parseInt(localStorage.getItem("cor") || "1");
-    const savedCorCount = parseInt(localStorage.getItem("corCount") || "0");
-    cor = savedCor;
-    corCount = savedCorCount;
-  }
 
   function salvarCor() {
     localStorage.setItem("cor", `${cor}`);
@@ -264,7 +258,13 @@ const Header = () => {
     aplicarCor();
   }
 
-  window.addEventListener("load", () => {
+  useEffect(() => {
+    function carregarCor() {
+      const savedCor = parseInt(localStorage.getItem("cor") || "1");
+      const savedCorCount = parseInt(localStorage.getItem("corCount") || "0");
+      cor = savedCor;
+      corCount = savedCorCount;
+    }
     carregarCor();
     aplicarCor();
   });
